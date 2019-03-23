@@ -28,7 +28,7 @@ function calcTip() {
 
     //Display text 
     document.getElementById("totalTip").style.display = 'block';
-    document.getElementById("tip").innerHTML = total;
+    document.getElementById("tip").innerHTML = `Tip: $${total}`; // send back formatted string.
 }
 
 
