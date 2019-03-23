@@ -10,22 +10,40 @@
     <title>Tip Calc</title>
 </head>
 <body>
-    <form action="" method="post">
-        <label for="bill"> How much was your bill? <input type="text" name="bill" id="billAmt"> </label>
-        <label for="sharing">How many people are sharing your bill? <input type="number" name="sharing" id="peopleAmt"></label>
-        <label for="service">How was your service? 
-            <select name="service" id="service">
-                <option disabled selected value="null"> --Choose an option</option>
-                <option value="0.3">Outstanding</option>
-                <option value="0.2">Good</option>
-                <option value="0.15">Okay</option>
-                <option value="0">Bad</option>
-            </select>
-        </label>
-        <button type="button" id="calculate">Calculate</button>
+    <!-- BEGIN main form -->
+    <form class = "container" action="" method="post">
+        <!-- First question. -->
+        <div class = "form-group">
+            <label for="bill"> How much was your bill?
+                <input class ="form-control" type="text" name="bill" id="billAmt" aria-describedby="billAmount"> 
+            </label>
+        </div>
+        <!-- Second question -->
+        <div class = "form-group">
+            <label for="sharing">How many people are sharing your bill? 
+                <input class ="form-control" type="number" name="sharing" id="peopleAmt" aria-describedby="partyTotal">
+            </label>
+        </div>
+        <div class = "form-group">
+            <!-- Third question -->
+            <label for="service">How was your service? 
+                <select class ="form-control" name="service" id="service" aria-describedby="servieSelection">
+                    <option disabled selected value="null"> --Choose an option</option>
+                    <option value="0.3">Outstanding</option>
+                    <option value="0.2">Good</option>
+                    <option value="0.15">Okay</option>
+                    <option value="0">Bad</option>
+                </select>
+            </label>
+        </div>
+        
+        <button class ="btn btn-primary form-control" type="button" id="calculate">Calculate</button>
     </form>
-
-    <div id="totalTip"> $<span id="tip"></span></div>
+    <!-- END main form -->
+    <!-- Present tip to user -->
+    <div class = "container" id="totalTip" class="form-group">
+        <p id="tip"><em>Tip will be shown here..</em></p>
+    </div>
 
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
